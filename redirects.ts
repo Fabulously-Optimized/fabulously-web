@@ -15,5 +15,6 @@ export const redirects = [
   ["/thanks", "https://github.com/Fabulously-Optimized/fabulously-optimized/blob/main/CONTRIBUTING.md"],
   ["/translate", "https://wiki.download.fo/readme/language-support"],
   ["/update", "https://wiki.download.fo/readme/update-instructions"],
-  ["/wiki", "https://wiki.download.fo"]
+  ["/wiki", "https://wiki.download.fo"],
+  ["/vanilla", "https://download.fo/mrpack-to-zip/vanilla"]
 ]

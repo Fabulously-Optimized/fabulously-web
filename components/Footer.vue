@@ -11,21 +11,23 @@ import { Avatar } from "omorphia";
       <div class="link-rows">
         <div class="link-row">
           <h4>{{ $t("footer.header.contribute") }}</h4>
-          <NuxtLink to="/github">GitHub</NuxtLink>
-          <NuxtLink to="/translate">{{
+          <NuxtLink to="/github" :external="true">GitHub</NuxtLink>
+          <NuxtLink to="/translate" :external="true">{{
             $t("footer.links.translate")
           }}</NuxtLink>
         </div>
         <div class="link-row">
           <h4>{{ $t("footer.header.discuss") }}</h4>
-          <NuxtLink to="/discord">Discord</NuxtLink>
-          <NuxtLink to="/mastodon">Mastodon</NuxtLink>
-          <NuxtLink to="/wiki">{{ $t("navbar.links.wiki") }}</NuxtLink>
+          <NuxtLink to="/discord" :external="true">Discord</NuxtLink>
+          <NuxtLink to="/mastodon" :external="true">Mastodon</NuxtLink>
+          <NuxtLink to="/wiki" :external="true">{{
+            $t("navbar.links.wiki")
+          }}</NuxtLink>
         </div>
         <div class="link-row">
           <h4>{{ $t("footer.header.download") }}</h4>
-          <NuxtLink to="/modrinth">Modrinth</NuxtLink>
-          <NuxtLink to="/curseforge">CurseForge</NuxtLink>
+          <NuxtLink to="/modrinth" :external="true">Modrinth</NuxtLink>
+          <NuxtLink to="/curseforge" :external="true">CurseForge</NuxtLink>
         </div>
       </div>
     </div>

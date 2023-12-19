@@ -26,12 +26,10 @@ const availableLocales = computed(() => {
 });
 
 const languageOptionFilter = computed(() => {
-  console.log(availableLocales.value);
   return availableLocales.value.map((locale: any) => ({
     id: locale.code,
     color: locale.code === currentLocale.value ? "green" : "",
     action: () => {
-      console.log(locale.code);
       setLocale(locale.code);
     },
     hoverFilledOnly: false,

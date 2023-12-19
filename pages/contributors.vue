@@ -10,9 +10,23 @@ useSeoMeta({
   themeColor: "#d19321",
 });
 
-const contributors = await(
-  await fetch(`https://fabulously-meta.mineblock11.dev/v1/contributors`)
-).json();
+const { data: contributorsRaw } = await useFetch(
+  "https://fabulously-meta.imb11.dev/v1/contributors"
+);
+
+const contributors = computed(() => {
+  // If contributorsRaw is a string, parse it as JSON
+  if (typeof contributorsRaw.value === "string") {
+    return JSON.parse(contributorsRaw.value);
+  } else {
+    return contributorsRaw.value;
+  }
+
+  return {
+    organizationMembers: [],
+    contributors: [],
+  };
+});
 </script>
 
 <template>
@@ -24,27 +38,25 @@ const contributors = await(
     <h2>{{ $t("content.contributors.org") }}</h2>
     <div class="contributor-cards">
       <a
-        :href="`https://github.com/${contributor}`"
+        :href="`https://github.com/${contributor.username}`"
         v-for="contributor in contributors.organizationMembers"
         class="contributor-card"
         target="_blank"
       >
-        <NuxtImg :src="`https://github.com/${contributor}.png`" />
-        <p>{{ contributor }}</p>
+        <NuxtImg :src="contributor.avatar_url" />
+        <p>{{ contributor.username }}</p>
       </a>
     </div>
     <h2>{{ $t("content.contributors") }}</h2>
     <div class="contributor-cards">
       <a
-        :href="`https://github.com/${contributor}`"
-        v-for="contributor in contributors.contributors.filter(
-          (_contributor: any) => !_contributor.includes('[bot]')
-        )"
+        :href="`https://github.com/${contributor.username}`"
+        v-for="contributor in contributors.contributors"
         class="contributor-card"
         target="_blank"
       >
-        <NuxtImg :src="`https://github.com/${contributor}.png`" />
-        <p>{{ contributor }}</p>
+        <NuxtImg :src="contributor.avatar_url" />
+        <p>{{ contributor.username }}</p>
       </a>
     </div>
   </div>

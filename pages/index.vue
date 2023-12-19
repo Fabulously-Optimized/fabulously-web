@@ -130,6 +130,9 @@ const features: any = ref([
           @click="navigateTo(`/curseforge`, { external: true })"
           ><DownloadIcon />CurseForge</Button
         >
+        <Button @click="navigateTo(`/vanilla`, { external: true })"
+          ><DownloadIcon /> Vanilla</Button
+        >
       </div>
     </div>
     <div class="column graph__container">
