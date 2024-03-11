@@ -69,12 +69,12 @@ onMounted(() => {
 <ul>
     <li>
         <i18n-t keypath="content.contribute.modpackLaunchersTitle" tag="strong">
-          <a href="https://download.fo/curseforge">{{ $t("content.contribute.modpackLaunchersTitle.curseforge") }}</a>
-          <a href="https://download.fo/modrinth">{{ $t("content.contribute.modpackLaunchersTitle.modrinth") }}</a>
+          <a href="https://wiki.download.fo/readme/install-instructions#curseforge-app">{{ $t("content.contribute.modpackLaunchersTitle.curseforge") }}</a>
+          <a href="https://wiki.download.fo/readme/install-instructions#modrinth-app">{{ $t("content.contribute.modpackLaunchersTitle.modrinth") }}</a>
+          <a href="https://wiki.download.fo/readme/install-instructions#gdlauncher-carbon">{{ $t("content.contribute.modpackLaunchersTitle.gdlauncher") }}</a>
         </i18n-t>
         <ul>
             <li>{{ $t("content.contribute.modpackLaunchersMoneyInfo") }}</li>
-            <li><a href="https://download.fo/install">{{ $t("content.contribute.modpackLaunchersInstallInstructions") }}</a></li>
         </ul>
     </li>
     <li>
